@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Hacks</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+</head>
+<body>
+        <!--------------------Navigation Bar---------------------------->
+        <header> 
+            <a href="#" class="logo">Logo</a>
+            <ul class="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Pollution Near You</a></li>
+                <li><a href="#">Get Involved</a></li>
+            </ul> 
+        </header> 
+        <!--------------------Sticky Background---------------------------->
+        <section class="banner">
+            <div class="c1">
+                <div class="title">
+                    <h1>ANTS</h1>
+                    <div class="sub-title">
+                        <h2>A Movement Against Pollution</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            window.addEventListener("scroll", function(){
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky", window.scrollY > 0)
+            })
+        </script>
+        <!--------------------About Us---------------------------->
+        <section class="about-us">
+            <h1 class="about-us-title">About Us</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <h2 class="subtitle">Mission Statement</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="column">
+                        <h2 class="subtitle">Other thing</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <!-----------------Pollution Stats and stuff--------------------->
+        <section class="stats">
+            <h1 class="stats-title">Pollution Near U</h1>
+        </section>
+        <!-----------------Contact forms--------------------->
+        <section class="contact">
+            <h1 class="contact-title">Get Involved</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="column-2">
+                        <form action="https://formspree.io/f/xknakyro" method="POST">
+                            <h3>Join us now</h3>
+                                <input type="text" name="Name:" id="name" placeholder="Your Name" required>           
+                                <input type="email" name="Email:" id="email" placeholder="Email ID" required>
+                                <input type="text" name="Phone Number:" id="phone" placeholder="Phone Number" required> 
+                                <textarea name="Message:" id="message" rows="4" placeholder="How Can We Help You?"></textarea>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                    <div class="column-2">
+                        <form action="https://formspree.io/f/xknakyro" method="POST">
+                            <h3>Make YOUR Mark</h3>
+                                <input type="text" name="Name:" id="name" placeholder="Your Name" required>           
+                                <input type="email" name="Email:" id="email" placeholder="Email ID" required>
+                                <input type="text" name="Phone Number:" id="phone" placeholder="Phone Number" required> 
+                                <textarea name="Message:" id="message" rows="4" placeholder="How Can We Help You?"></textarea>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>
