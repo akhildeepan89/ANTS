@@ -64,7 +64,6 @@
                 </div>
         </div>
     </section>
-    <!-----------------Pollution Stats and stuff--------------------->
    <!-----------------Pollution Stats and stuff--------------------->
    <section class="stats">
     <h1 class="stats-title">Pollution Near You</h1>
@@ -72,99 +71,116 @@
         <div class="column left" style="background-color:#aaa;height: 80vh; width:70vw;">
             <div class="map-box">
                 <!--In the div HERE Map will be rendered-->
-            <div style="width: 70vw;height: 80vh;" id="mapContainer"></div>
+                <div style="width: 70vw;height: 80vh;" id="mapContainer"></div>
 
-            <script>
-                //Step 1: initialize communication with the platform
-                // Replace variable YOUR_API_KEY with your own apikey
-                var platform = new H.service.Platform({
-                    apikey: 'MsTrScewem5xTCT7sSBGJzL_BY0REcrPW4FNdMiuKLM'
-                });
-                var defaultLayers = platform.createDefaultLayers();
-                //Step 2: initialize a map - this map is centered over Europe
-                var map = new H.Map(document.getElementById('mapContainer'),
-                    defaultLayers.vector.normal.map,
-                    {
-                        center: { lat: 43.65189, lng: -79.381706 },
-                        zoom: 10,
-                        pixelRatio: window.devicePixelRatio || 1
-                    }
-                );
-
-
-                // This adds a resize listener to make sure that the map occupies the whole container
-                window.addEventListener('resize', () => map.getViewPort().resize());
-                //Step 3: make the map interactive
-                // MapEvents enables the event system
-                // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-                var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-        
-                // Create the default UI components
-                var ui = H.ui.UI.createDefault(map, defaultLayers);
-                
-                /***
-                function addMarkersToMap(group) {
-                var bramptonMarker = new H.map.Marker({lat:43.73167, lng:-79.76300});
-                group.addObject(bramptonMarker);
-                var missisaugaMarker = new H.map.Marker({lat:43.59031, lng:-79.64582});
-                group.addObject(missisaugaMarker);
-                var torontoMarker = new H.map.Marker({lat:43.65309, lng:-79.38923});
-                group.addObject(torontoMarker);
-                var vaughanMarker = new H.map.Marker({lat:43.85695, lng:-79.50872});
-                group.addObject(vaughanMarker);
-
-                }
-                *****/ 
-
-                function addMarkerToGroup(group, coordinate, name) {
-                    var marker = new H.map.Marker(coordinate);
-                    // add custom data to the marker
-                    marker.setData(name);
-                    group.addObject(marker);
-
-                }
-
-                function addInfoBubble(map) {
-                    var group = new H.map.Group();
-
-                    map.addObject(group);
-
-                    // add 'tap' event listener, that opens info bubble, to the group
-                    group.addEventListener('tap', function (evt) {
-                        // event target is the marker itself, group is a parent event target
-                        // for all objects that it contains
-                        var bubble = new H.ui.InfoBubble(evt.target.getGeometry(), {
-                        // read custom data
-                        content: evt.target.getData()
-                        });
-                        // show info bubble
-                        ui.addBubble(bubble);
-                    }, false);
-
-                    addMarkerToGroup(group, {lat:43.73167, lng:-79.76300}, "Brampton \n Water Conductivity: 0.5umhos/cm \n Particulate Matter: 12ug/m^3" );
-                    addMarkerToGroup(group, {lat:43.59031, lng:-79.64582}, "Missisauga \n Water Conductivity: 0.6umhos/cm \n Particulate Matter: 10ug/m^3");
-                    addMarkerToGroup(group, {lat:43.85695, lng:-79.50872}, "Vaughan \n Water Conductivity: 0.55umhos/cm \n Particulate Matter: 11ug/m^3" );
-                    addMarkerToGroup(group, {lat:43.65309, lng:-79.38923}, "Toronto \n Water Conductivity: 0.63umhos/cm \n Particulate Matter: 13ug/m^3");
-                    }
+                <script>
+                    //Step 1: initialize communication with the platform
+                    // Replace variable YOUR_API_KEY with your own apikey
+                    var platform = new H.service.Platform({
+                        apikey: 'MsTrScewem5xTCT7sSBGJzL_BY0REcrPW4FNdMiuKLM'
+                    });
+                    var defaultLayers = platform.createDefaultLayers();
+                    //Step 2: initialize a map - this map is centered over Europe
+                    var map = new H.Map(document.getElementById('mapContainer'),
+                        defaultLayers.vector.normal.map,
+                        {
+                            center: { lat: 43.65189, lng: -79.381706 },
+                            zoom: 10,
+                            pixelRatio: window.devicePixelRatio || 1
+                        }
+                    );
 
 
+                    // This adds a resize listener to make sure that the map occupies the whole container
+                    window.addEventListener('resize', () => map.getViewPort().resize());
+
+                    //Step 3: make the map interactive
+                    // MapEvents enables the event system
+                    // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+                    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+            
+                    // Create the default UI components
+                    var ui = H.ui.UI.createDefault(map, defaultLayers);
                     
+                    /***
+                    function addMarkersToMap(group) {
+                    var bramptonMarker = new H.map.Marker({lat:43.73167, lng:-79.76300});
+                    group.addObject(bramptonMarker);
+                    var missisaugaMarker = new H.map.Marker({lat:43.59031, lng:-79.64582});
+                    group.addObject(missisaugaMarker);
+                    var torontoMarker = new H.map.Marker({lat:43.65309, lng:-79.38923});
+                    group.addObject(torontoMarker);
+                    var vaughanMarker = new H.map.Marker({lat:43.85695, lng:-79.50872});
+                    group.addObject(vaughanMarker);
 
-                // Now use the map as required...
-                window.onload = function() {
-                    //addMarkersToMap(map);
-                    addInfoBubble(map);
-                }
+                    }
+                    *****/ 
 
-            </script>
-        </div>
+                    function addMarkerToGroup(group, coordinate, name) {
+                        var marker = new H.map.Marker(coordinate);
+                        // add custom data to the marker
+                        marker.setData(name);
+                        group.addObject(marker);
+
+                    }
+
+                    function addInfoBubble(map) {
+                        var group = new H.map.Group();
+
+                        map.addObject(group);
+
+                        // add 'tap' event listener, that opens info bubble, to the group
+                        group.addEventListener('tap', function (evt) {
+                            // event target is the marker itself, group is a parent event target
+                            // for all objects that it contains
+                            var bubble = new H.ui.InfoBubble(evt.target.getGeometry(), {
+                            // read custom data
+                            content: evt.target.getData()
+                            });
+                            // show info bubble
+                            ui.addBubble(bubble);
+                        }, false);
+
+                        addMarkerToGroup(group, {lat:43.73167, lng:-79.76300}, "Brampton \n Water Conductivity: 0.5umhos/cm \n Particulate Matter: 12ug/m^3" );
+                        addMarkerToGroup(group, {lat:43.59031, lng:-79.64582}, "Missisauga \n Water Conductivity: 0.6umhos/cm \n Particulate Matter: 10ug/m^3");
+                        addMarkerToGroup(group, {lat:43.85695, lng:-79.50872}, "Vaughan \n Water Conductivity: 0.55umhos/cm \n Particulate Matter: 11ug/m^3" );
+                        addMarkerToGroup(group, {lat:43.65309, lng:-79.38923}, "Toronto \n Water Conductivity: 0.63umhos/cm \n Particulate Matter: 13ug/m^3");
+                        }
+                        const waterData = [{
+                            city: "Brampton",
+                            conductivity: 0.5,
+                            particulateMatter: 12,
+                        },
+                        {
+                            city: "Mississauga",
+                            conductivity: 0.6,
+                            particulateMatter: 10,
+                        },
+                        {
+                            city: "Vaughan",
+                            conductivity: 0.55,
+                            particulateMatter: 11,
+                        },
+                        {
+                            city: "Toronto",
+                            conductivity: 0.63,
+                            particulateMatter: 13,
+                        },
+                        ];
+
+
+                        
+
+                    // Now use the map as required...
+                    window.onload = function() {
+                        //addMarkersToMap(map);
+                        addInfoBubble(map);
+                    }
+                </script>
+            </div>
         </div>
         <div class="column right" style="background-color:#70b77c;">
           <h2>Analysis and Possible Action</h2> <br> <br>
-          <p>Analysis:</p> <br>
-          <script src="analysis.js"></script>
-            <div id="analysis"></div>
-          <p>Reccomendation:</p>
         </div>
       </div>
 </section>

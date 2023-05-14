@@ -184,25 +184,30 @@ header.sticky ul li a, header.sticky a.logo{
     height: 3px;
     width: 300px;
     margin: 10px auto;
+    margin-bottom: 35px;
 }
 
 
 /*--------Shreya's CSS----------*/
-.column {
+.column{
     float: left;
     padding: 0px;
-  }
+}
   
-  .left {
+.left{
     width: 70vw;
-  }
+}
   
-  .right {
+.right{
     padding: 15px;
     width: 50vh;
     height: 80vh;
-  }
-
+}
+.stats{
+    position: relative;
+    align-items: center;
+    margin-left: 40px;
+}
 
 
 
