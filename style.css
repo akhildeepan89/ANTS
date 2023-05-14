@@ -5,7 +5,7 @@
     font-family: 'Comfortaa', sans-serif;
 }
 body{
-    background: #18ffa7 !important;
+    background: #115827 !important;
     min-height: 200vh;
 }
 header{
@@ -21,8 +21,8 @@ header{
     z-index: 100000 ;
 }
 header.sticky{
-    padding: 2px 100px;
-    background: #56eeff;
+    padding: 15px 100px;
+    background: rgba(76, 76, 76, 0.94);
 }
 header a.logo{
     position: relative ;
@@ -70,12 +70,7 @@ header.sticky ul li a, header.sticky a.logo{
     color: #fff;
     padding: 40px 100px;
 }
-.content h1{
-    font-size: 64px;
-    font-weight:600;
-    margin-top: 13px;
-    margin-bottom: 30px;
-}
+
 .content button{
     background: transparent;
     border: 2px solid #fff;
@@ -93,7 +88,6 @@ header.sticky ul li a, header.sticky a.logo{
     color: #000;
 }
 .banner{
-
     width: 100%;
     height: 50%;
 }
@@ -132,10 +126,12 @@ header.sticky ul li a, header.sticky a.logo{
 
 
 /*------------------abt us------------------*/
-.about-us{
+.about-us .container{
     padding: 50px 50px 20px 20px;
+    margin-left: 75px;
 }
 .about-us-title{
+    padding: 50px 0px 0px 0px;
     font-size: 6vh;
     position: relative;
     text-align: center;
@@ -172,10 +168,11 @@ header.sticky ul li a, header.sticky a.logo{
 }
 
 /*----------------polution-------------------*/
-.stats{
+.stats .container{
     padding: 50px 50px 20px 20px;
 }
 .stats-title{
+    padding: 50px 0px 0px 0px;
     font-size: 6vh;
     position: relative;
     text-align: center;
@@ -189,11 +186,37 @@ header.sticky ul li a, header.sticky a.logo{
     margin: 10px auto;
 }
 
+
+/*--------Shreya's CSS----------*/
+.column {
+    float: left;
+    padding: 0px;
+  }
+  
+  .left {
+    width: 70vw;
+  }
+  
+  .right {
+    padding: 15px;
+    width: 50vh;
+    height: 80vh;
+  }
+
+
+
+
 /*-----------Get Involved-----------*/
 .contact{
-    padding: 50px 50px 20px 20px;
+    margin-left: 180px;
+    background: none;
+}
+.contact .container{
+    padding-top: 0px;
 }
 .contact-title{
+    margin-left: -180px;
+    margin-top: 40px;
     font-size: 6vh;
     position: relative;
     text-align: center;
@@ -203,13 +226,14 @@ header.sticky ul li a, header.sticky a.logo{
     background: #000;
     display: block;
     height: 3px;
-    width: 300px;
+    width: 200px;
     margin: 10px auto;
+    margin-bottom: 30px;
 }
 .column-2 {
     float: left;
     width: 50%;
-    padding: 10px;
+    padding: 20px;
     height: 300px; 
  }
    
@@ -219,52 +243,42 @@ header.sticky ul li a, header.sticky a.logo{
     clear: both;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.container-2{
-    width: 100%;
-    height: 100vh;
-    background: rgb(86, 86, 86);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}   
-form{
+.CV-upload{
+    font-size: 16px;
+    text-align: center;
+    border: 3px solid #fff;
+    color: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.CV-upload:hover{
     background: #fff;
+    color: #000;
+}
+
+
+
+/*------------form--------------------*/
+form{
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     padding: 2vw 4vw;
     width: 90%;
     max-width: 600px;
-    border-radius: 10px;
+    border-radius: 75px;
 }
 form h3{
-    color: #555;
-    font-weight: 800;
+    color: #000000;
+    font-weight: 1000;
+    font-size: 5vh;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 form input, form textarea{
@@ -274,10 +288,12 @@ form input, form textarea{
     outline: none;
     background: #f5f5f5;
     font-size: 16px;
+    border-radius: 20px;
 }
 form button{
     padding: 15px;
-    background: #73243a;
+    background: linear-gradient(90deg, rgba(0,255,77,1) 0%, rgba(0,212,255,1) 92%);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     color: #fff;
     font-size: 18px;
     border: 0;
@@ -286,4 +302,22 @@ form button{
     width: 150px;
     margin: 20px auto 0;
     border-radius: 30px;
+    transition: 0.75s;
+    opacity: 0.7;
+}
+form button:hover{
+    opacity: 1;
+    background: linear-gradient(139deg, rgba(0,212,255,1) 8%, rgba(0,255,77,1) 100%);
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 450px;
+    color: #fff;
+}
+.copyright i{
+    color: #137cb3;
 }
