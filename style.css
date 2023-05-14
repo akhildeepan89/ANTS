@@ -22,7 +22,7 @@ header{
 }
 header.sticky{
     padding: 15px 100px;
-    background: rgba(76, 76, 76, 0.94);
+    background: rgba(76, 76, 76);
 }
 header a.logo{
     position: relative ;
@@ -103,7 +103,7 @@ header.sticky ul li a, header.sticky a.logo{
     background-size: cover;
     background-attachment: fixed;
 }
-.c1 h1{
+.banner .c1 h1{
     color: #fff;
     position: absolute;
     top: 50%;
@@ -168,24 +168,22 @@ header.sticky ul li a, header.sticky a.logo{
 }
 
 /*----------------polution-------------------*/
+.stats{
+    position: relative;
+}
+.stats h1{
+    color: #fff;
+}
 .stats .container{
     padding: 50px 50px 20px 20px;
 }
 .stats-title{
-    padding: 50px 0px 0px 0px;
+    padding: 40px 0px 30px 0px;
     font-size: 6vh;
     position: relative;
     text-align: center;
 }
-.stats-title::after{
-    content: '';
-    background: #000;
-    display: block;
-    height: 3px;
-    width: 300px;
-    margin: 10px auto;
-    margin-bottom: 35px;
-}
+
 
 
 /*--------Shreya's CSS----------*/
@@ -193,7 +191,27 @@ header.sticky ul li a, header.sticky a.logo{
     float: left;
     padding: 0px;
 }
-  
+.column-right{
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 24%;
+    max-width: 600px;
+    height: 80vh;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+.map-box{
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .left{
     width: 70vw;
 }
@@ -203,25 +221,21 @@ header.sticky ul li a, header.sticky a.logo{
     width: 50vh;
     height: 80vh;
 }
-.stats{
-    position: relative;
-    align-items: center;
-    margin-left: 40px;
-}
+
 
 
 
 /*-----------Get Involved-----------*/
 .contact{
-    margin-left: 180px;
+    margin-left: 70px;
     background: none;
 }
 .contact .container{
     padding-top: 0px;
 }
 .contact-title{
-    margin-left: -180px;
-    margin-top: 40px;
+    margin-left: -100px;
+    margin-top: 50px;
     font-size: 6vh;
     position: relative;
     text-align: center;

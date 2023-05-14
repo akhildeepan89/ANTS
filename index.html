@@ -55,8 +55,7 @@
             <div class="row">
                 <div class="column">
                     <h2 class="subtitle">Mission Statement</h2>
-                    <p></p>
-                </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>                </div>
                 <div class="column">
                     <h2 class="subtitle">Other thing</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -65,13 +64,14 @@
         </div>
     </section>
    <!-----------------Pollution Stats and stuff--------------------->
-   <section class="stats">
-    <h1 class="stats-title">Pollution Near You</h1>
-    <div class="row">
-        <div class="column left" style="background-color:#aaa;height: 80vh; width:70vw;">
-            <div class="map-box">
-                <!--In the div HERE Map will be rendered-->
-                <div style="width: 70vw;height: 80vh;" id="mapContainer"></div>
+    <section class="stats">
+    <div class="c1">
+        <h1 class="stats-title">Pollution Near You</h1>
+        <div class="row">
+            <div class="column left" style="background-color:#aaa;height: 80vh; width:70vw;">
+                <div class="map-box">
+                    <!--In the div HERE Map will be rendered-->
+                <div class="map-actual" style="width: 70vw;height: 80vh;" id="mapContainer"></div>
 
                 <script>
                     //Step 1: initialize communication with the platform
@@ -93,7 +93,6 @@
 
                     // This adds a resize listener to make sure that the map occupies the whole container
                     window.addEventListener('resize', () => map.getViewPort().resize());
-
                     //Step 3: make the map interactive
                     // MapEvents enables the event system
                     // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
@@ -146,27 +145,6 @@
                         addMarkerToGroup(group, {lat:43.85695, lng:-79.50872}, "Vaughan \n Water Conductivity: 0.55umhos/cm \n Particulate Matter: 11ug/m^3" );
                         addMarkerToGroup(group, {lat:43.65309, lng:-79.38923}, "Toronto \n Water Conductivity: 0.63umhos/cm \n Particulate Matter: 13ug/m^3");
                         }
-                        const waterData = [{
-                            city: "Brampton",
-                            conductivity: 0.5,
-                            particulateMatter: 12,
-                        },
-                        {
-                            city: "Mississauga",
-                            conductivity: 0.6,
-                            particulateMatter: 10,
-                        },
-                        {
-                            city: "Vaughan",
-                            conductivity: 0.55,
-                            particulateMatter: 11,
-                        },
-                        {
-                            city: "Toronto",
-                            conductivity: 0.63,
-                            particulateMatter: 13,
-                        },
-                        ];
 
 
                         
@@ -178,11 +156,16 @@
                     }
                 </script>
             </div>
+            </div>
+            <div class="column-right">
+            <h2>Analysis and Possible Action</h2> <br> <br>
+            <p>Analysis:</p> <br>
+            <script src="analysis.js"></script>
+                <div id="analysis"></div>
+            <p>Reccomendation:</p>
+            </div>
         </div>
-        <div class="column right" style="background-color:#70b77c;">
-          <h2>Analysis and Possible Action</h2> <br> <br>
-        </div>
-      </div>
+    </div>
 </section>
     <!-----------------Contact forms--------------------->
     <section class="contact">
@@ -217,5 +200,8 @@
             </div>
         </div>
     </section>
+    <div class="copyright">
+        <p>Made with <i class="fas fa-heart"></i> by Akhil, Shreya, Tejas, and Niranjan</p>
+    </div>
 </body>
 </html>
