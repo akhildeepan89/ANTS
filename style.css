@@ -45,6 +45,7 @@ header ul li{
     list-style: none;
     text-decoration: none !important;
     transition: transform 0.5s;
+    scroll-behavior: smooth;
 }
 header ul li:hover{
     transform: translateY(-5px);
